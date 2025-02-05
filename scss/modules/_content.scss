@@ -1,0 +1,169 @@
+@use "../utils/variables";
+
+.newsletter-card,
+.success-message {
+  min-height: 100vh;
+  background: variables.$white;
+  overflow: hidden;
+  max-width: 100%;
+  box-shadow: 0 0.25rem 0.625rem rgba(variables.$dark-slate-grey, 0.1);
+  text-align: start;
+}
+
+.newsletter-card {
+  .image-container {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem 1.5rem;
+    h1 {
+      font-size: 2.5rem;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+      li {
+        font-size: 1rem;
+        margin: 0.625rem 0;
+        display: flex;
+        align-items: start;
+        gap: 0.8rem;
+
+        &:before {
+          content: "";
+          background-image: url("../../assets/images/icon-list.svg");
+          background-repeat: no-repeat;
+          object-fit: cover;
+          width: 1.5rem;
+          height: 1.35rem;
+        }
+      }
+    }
+
+    form {
+      .label-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 0.75rem;
+        margin-block: 1rem;
+        label {
+          font-weight: 700;
+        }
+        .email-help {
+          color: variables.$tomato;
+        }
+      }
+
+      input {
+        width: 100%;
+        padding: 1rem 1.5rem;
+        border: 1px solid variables.$dark-slate-grey;
+        background-color: variables.$white;
+        border-radius: 0.5rem;
+        font-size: 0.875rem;
+        margin-block-end: 1.5rem;
+
+        &:focus {
+          outline: 1px solid variables.$dark-slate-grey;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        &:invalid:not(:placeholder-shown) {
+          outline: 1px solid variables.$tomato;
+          background-color: lighten(variables.$grey, 35);
+          color: variables.$tomato;
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: 26.5rem) {
+    min-height: 0;
+    max-width: 25rem;
+    margin: 2rem;
+    border-radius: 1rem;
+    padding: 1rem;
+  }
+  @media only screen and (min-width: 48rem) {
+    display: flex;
+    flex-direction: row-reverse;
+    min-height: 0;
+    max-width: 52rem;
+    margin: 2rem;
+    border-radius: 1rem;
+    padding: 1rem 1rem 1rem 2rem;
+    .content {
+      margin-inline-end: 1rem;
+    }
+  }
+  @media only screen and (min-width: 64rem) {
+    .content {
+      h1 {
+        font-size: 3.5rem;
+      }
+    }
+  }
+}
+
+// Styling for success message page
+.success-message {
+  display: none;
+  .message-content {
+    .success-icon {
+      margin-block: 10vh 1.5rem;
+      width: 3rem;
+      height: 3rem;
+    }
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-block-end: 1.5rem;
+    }
+    p {
+      font-size: 1rem;
+      .highlight {
+        font-weight: 700;
+      }
+      margin-block-end: 1.5rem;
+    }
+  }
+  &.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem;
+    @media only screen and (min-width: 26.5rem) {
+      min-height: 0;
+      max-width: 25rem;
+      margin: 2rem;
+      border-radius: 1rem;
+      padding: 2rem;
+      .message-content {
+        .success-icon {
+          margin-block: 0 1.5rem;
+          width: 2.5rem;
+          height: 2.5rem;
+        }
+        h2 {
+          font-size: 2.5rem;
+        }
+
+        p {
+          font-size: 0.875rem;
+        }
+      }
+    }
+  }
+}

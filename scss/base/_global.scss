@@ -1,0 +1,29 @@
+@use "../utils/variables";
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: variables.$charcoal-grey;
+  font-family: variables.$font;
+  color: variables.$dark-slate-grey;
+}
+
+button {
+  width: 100%;
+  padding: 1rem;
+  background-color: variables.$charcoal-grey;
+  color: variables.$white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+
+  &:hover {
+    background: linear-gradient(90deg, variables.$tomato 55%, hsl(20, 100%, 60%));
+  }
+}
+
+.hidden {
+  display: none !important;
+}
