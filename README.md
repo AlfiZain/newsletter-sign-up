@@ -41,7 +41,6 @@ Users should be able to:
 - Semantic HTML5 markup
 - CSS
 - Flexbox
-- CSS Grid
 - Mobile-first workflow
 - SASS - CSS preprocessor
 - Javascript
